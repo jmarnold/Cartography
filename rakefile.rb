@@ -68,6 +68,7 @@ task :compile => [:clean, :version] do
 	compile_solution("src/#{ROOT_NAMESPACE}.sln", "debug")
 	
 	copyOutputFiles "src/Cartography/bin/#{COMPILE_TARGET}", "*.{dll,pdb}", props[:stage]
+	copyOutputFiles "src/FubuMVC.Cartography/bin/#{COMPILE_TARGET}", "*.{dll,pdb}", props[:stage]
 end
 
 def compile_solution(solution, configuration)
