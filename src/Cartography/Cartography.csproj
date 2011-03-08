@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0844A704-AD06-4531-BBB9-3AAB99CBD915}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cartography</RootNamespace>
+    <AssemblyName>Cartography</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FubuCore">
+      <HintPath>..\..\lib\Fubu\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\..\lib\StructureMap\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dsl\ListModifierExpression.cs" />
+    <Compile Include="IMappingProvider.cs" />
+    <Compile Include="IMappingQuery.cs" />
+    <Compile Include="MappingProvider.cs" />
+    <Compile Include="MappingQuery.cs" />
+    <Compile Include="MappingRegistry.cs" />
+    <Compile Include="MappingRequest.cs" />
+    <Compile Include="MappingResult.cs" />
+    <Compile Include="Policies\ContinuationPropertyMappingPolicy.cs" />
+    <Compile Include="Policies\EnumerablePropertyMappingPolicy.cs" />
+    <Compile Include="Policies\IMappingPolicy.cs" />
+    <Compile Include="Policies\IPropertyMappingPolicy.cs" />
+    <Compile Include="Policies\MappingPolicySource.cs" />
+    <Compile Include="Policies\PrimitiveOrStringPropertyMappingPolicy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectionExtensions.cs" />
+    <Compile Include="Rules\ContinuationMappingRule.cs" />
+    <Compile Include="Rules\EnumerableMappingRule.cs" />
+    <Compile Include="Rules\IMappingRule.cs" />
+    <Compile Include="Rules\ValueMappingRule.cs" />
+    <Compile Include="Runtime\DefaultObjectResolver.cs" />
+    <Compile Include="Runtime\IMappingContext.cs" />
+    <Compile Include="Runtime\IObjectEnricher.cs" />
+    <Compile Include="Runtime\IObjectResolver.cs" />
+    <Compile Include="Runtime\LambdaObjectEnricher.cs" />
+    <Compile Include="Runtime\LambdaObjectResolver.cs" />
+    <Compile Include="Runtime\MappingContext.cs" />
+    <Compile Include="Runtime\PropertyMappingRequest.cs" />
+    <Compile Include="StructureMapExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
