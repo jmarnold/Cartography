@@ -7,7 +7,7 @@ namespace Cartography.Policies
 	{
 		public bool Matches(PropertyMappingRequest request)
 		{
-            return request.Source.IsEnumerable() && request.Destination.IsEnumerable() && request.NamesMatch();
+			return request.Source.IsEnumerable() && request.Destination.IsEnumerable() && request.NamesMatch();
 		}
 
 		public IMappingRule RuleFor(PropertyMappingRequest request)

@@ -22,7 +22,7 @@ namespace Cartography.Testing
 			                                                                                        	.CustomErrors
 			                                                                                        	.Each(dest.RegisterError));
 			var query = new MappingQuery(new List<IMappingPolicy> { mappingPolicy }, new List<IObjectResolver> { resolver }, new List<IObjectEnricher> { enricher });
-			provider = new MappingProvider(query, new MappingContext());
+			provider = new MappingProvider(query, new MappingContext((IMappingProvider)null));
 
 			var model = new ModelWithErrors {CustomErrors = new List<string> {"Error 1", "Error 2"}};
 			var notification = provider.Map<ModelWithErrors, Notification>(model);

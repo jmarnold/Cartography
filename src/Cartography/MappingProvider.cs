@@ -8,15 +8,15 @@ namespace Cartography
 	public class MappingProvider : IMappingProvider
 	{
 		private readonly IMappingQuery _query;
-	    private readonly IMappingContext _context;
+		private readonly IMappingContext _context;
 
 		public MappingProvider(IMappingQuery query, IMappingContext context)
 		{
-		    _query = query;
-		    _context = context;
+			_query = query;
+			_context = context;
 		}
 
-	    public TDestination Map<TOrigin, TDestination>(TOrigin origin)
+		public TDestination Map<TOrigin, TDestination>(TOrigin origin)
 		{
 			return (TDestination) Map(typeof (TOrigin), typeof (TDestination), origin);
 		}
@@ -26,31 +26,31 @@ namespace Cartography
 			var request = new MappingRequest(sourceType, destinationType);
 			var result = _query.MapFor(request);
 			var resolver = result.Resolvers.LastOrDefault(r => r.Matches(request));
-			if(resolver == null)
+			if (resolver == null)
 			{
 				return null;
 			}
 
-            if(!_context.Has<IMappingProvider>())
-            {
-                _context.Set<IMappingProvider>(this);
-            }
-            
+			if (!_context.Has<IMappingProvider>())
+			{
+				_context.Set<IMappingProvider>(this);
+			}
+
 			var destination = resolver.Resolve(request);
 
 			result
 				.EachRule(rule =>
 				          	{
 				          		var destinationValue = rule.Map(_context, source);
-								if(destinationValue == null)
-								{
-									return;
-								}
+				          		if (destinationValue == null)
+				          		{
+				          			return;
+				          		}
 
 				          		rule
-                                    .Request
-                                    .Destination
-                                    .SetValue(destination, destinationValue);
+				          			.Request
+				          			.Destination
+				          			.SetValue(destination, destinationValue);
 				          	});
 
 			result

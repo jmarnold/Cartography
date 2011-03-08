@@ -8,8 +8,8 @@ namespace Cartography.Policies
 		public bool Matches(PropertyMappingRequest request)
 		{
 			return request.Source.IsPrimitiveOrString() && request.Destination.IsPrimitiveOrString()
-				&& request.Source.PropertyType.Equals(request.Destination.PropertyType)
-				&& request.NamesMatch();
+			       && request.Source.PropertyType.Equals(request.Destination.PropertyType)
+			       && request.NamesMatch();
 		}
 
 		public IMappingRule RuleFor(PropertyMappingRequest request)

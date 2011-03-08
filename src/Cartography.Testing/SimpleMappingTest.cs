@@ -14,7 +14,7 @@ namespace Cartography.Testing
 			var propertyPolicy = new PrimitiveOrStringPropertyMappingPolicy();
 			var mappingPolicy = new MappingPolicySource(new List<IPropertyMappingPolicy> { propertyPolicy });
 			var query = new MappingQuery(new List<IMappingPolicy> { mappingPolicy }, new List<IObjectResolver> { new DefaultObjectResolver() }, new List<IObjectEnricher>());
-			var provider = new MappingProvider(query, new MappingContext());
+			var provider = new MappingProvider(query, new MappingContext((IMappingProvider)null));
 
 			var origin = new EasyModel
 			            	{
@@ -36,7 +36,7 @@ namespace Cartography.Testing
 			var propertyPolicy = new PrimitiveOrStringPropertyMappingPolicy();
 			var mappingPolicy = new MappingPolicySource(new List<IPropertyMappingPolicy> { propertyPolicy, continuationPolicy });
 			var query = new MappingQuery(new List<IMappingPolicy> { mappingPolicy }, new List<IObjectResolver> { new DefaultObjectResolver() }, new List<IObjectEnricher>());
-			provider = new MappingProvider(query, new MappingContext());
+			provider = new MappingProvider(query, new MappingContext(t => provider));
 
 			var child = new EasyModel
 			             	{

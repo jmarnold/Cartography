@@ -32,7 +32,8 @@ namespace Cartography
 		{
 			unchecked
 			{
-				return ((SourceType != null ? SourceType.GetHashCode() : 0)*397) ^ (DestinationType != null ? DestinationType.GetHashCode() : 0);
+				return ((SourceType != null ? SourceType.GetHashCode() : 0)*397) ^
+				       (DestinationType != null ? DestinationType.GetHashCode() : 0);
 			}
 		}
 	}

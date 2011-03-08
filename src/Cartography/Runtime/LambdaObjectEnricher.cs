@@ -42,7 +42,7 @@ namespace Cartography.Runtime
 
 		public void Enrich(object source, object destination)
 		{
-			_enrich((TSource)source, (TDestination)destination);
+			_enrich((TSource) source, (TDestination) destination);
 		}
 	}
 }

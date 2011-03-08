@@ -23,14 +23,14 @@ namespace Cartography.Rules
 			var sourceType = getTargetType(Request.Source);
 			var destinationType = getTargetType(Request.Destination);
 
-			if(sourceType == null || destinationType == null || sourceValues == null)
+			if (sourceType == null || destinationType == null || sourceValues == null)
 			{
 				// TODO -- logging??
 				return null;
 			}
 
-		    var provider = context.Get<IMappingProvider>();
-			var destinationValues = (IList)typeof (List<>).CloseAndBuildAs(destinationType);
+			var provider = context.Get<IMappingProvider>();
+			var destinationValues = (IList) typeof (List<>).CloseAndBuildAs(destinationType);
 			sourceValues.Each(src => destinationValues.Add(provider.Map(sourceType, destinationType, src)));
 			return destinationValues;
 		}
@@ -38,7 +38,7 @@ namespace Cartography.Rules
 		private Type getTargetType(Accessor accessor)
 		{
 			var enumerable = accessor.PropertyType.FindInterfaceThatCloses(typeof (IEnumerable<>));
-			if(enumerable == null)
+			if (enumerable == null)
 			{
 				return null;
 			}
@@ -48,10 +48,10 @@ namespace Cartography.Rules
 				.First();
 		}
 
-        public override string ToString()
-        {
-            return "Enumerable Mapping: {0}.{1} to {2}.{3}".ToFormat(Request.OwnerType.Name, Request.Source.Name,
-                Request.Destination.OwnerType.Name, Request.Destination.Name);
-        }
+		public override string ToString()
+		{
+			return "Enumerable Mapping: {0}.{1} to {2}.{3}".ToFormat(Request.OwnerType.Name, Request.Source.Name,
+			                                                         Request.Destination.OwnerType.Name, Request.Destination.Name);
+		}
 	}
 }

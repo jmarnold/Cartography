@@ -20,7 +20,7 @@ namespace Cartography
 
 		public static bool IsEnumerable(this Type type)
 		{
-			return type.Closes(typeof (IEnumerable<>)) && !type.Equals(typeof(string));
+			return type.Closes(typeof (IEnumerable<>)) && !type.Equals(typeof (string));
 		}
 
 		public static IEnumerable<PropertyInfo> PublicProperties(this Type type)

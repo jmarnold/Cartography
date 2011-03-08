@@ -7,8 +7,8 @@ namespace Cartography
 {
 	public class MappingResult
 	{
-		public MappingResult(Type sourceType, Type destinationType, IEnumerable<IMappingRule> rules, 
-			IEnumerable<IObjectResolver> resolvers, IEnumerable<IObjectEnricher> enrichers)
+		public MappingResult(Type sourceType, Type destinationType, IEnumerable<IMappingRule> rules,
+		                     IEnumerable<IObjectResolver> resolvers, IEnumerable<IObjectEnricher> enrichers)
 		{
 			SourceType = sourceType;
 			DestinationType = destinationType;
@@ -32,8 +32,8 @@ namespace Cartography
 		{
 			if (ReferenceEquals(null, obj)) return false;
 			if (ReferenceEquals(this, obj)) return true;
-			if (obj.GetType() != typeof(MappingResult)) return false;
-			return Equals((MappingResult)obj);
+			if (obj.GetType() != typeof (MappingResult)) return false;
+			return Equals((MappingResult) obj);
 		}
 
 		public bool Equals(MappingResult other)
@@ -47,7 +47,8 @@ namespace Cartography
 		{
 			unchecked
 			{
-				return ((SourceType != null ? SourceType.GetHashCode() : 0) * 397) ^ (DestinationType != null ? DestinationType.GetHashCode() : 0);
+				return ((SourceType != null ? SourceType.GetHashCode() : 0)*397) ^
+				       (DestinationType != null ? DestinationType.GetHashCode() : 0);
 			}
 		}
 	}

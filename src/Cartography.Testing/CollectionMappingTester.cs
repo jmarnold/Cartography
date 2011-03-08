@@ -17,7 +17,7 @@ namespace Cartography.Testing
 			var propertyPolicy = new PrimitiveOrStringPropertyMappingPolicy();
 			var mappingPolicy = new MappingPolicySource(new List<IPropertyMappingPolicy> { propertyPolicy, continuationPolicy, enumerablePolicy });
 			var query = new MappingQuery(new List<IMappingPolicy> { mappingPolicy }, new List<IObjectResolver> { new DefaultObjectResolver() }, new List<IObjectEnricher>());
-			provider = new MappingProvider(query, new MappingContext());
+			provider = new MappingProvider(query, new MappingContext(t => provider));
 
 			var rootEntity = new SampleEntityWithCollection()
 			                 	{

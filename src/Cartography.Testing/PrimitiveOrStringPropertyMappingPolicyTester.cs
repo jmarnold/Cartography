@@ -54,7 +54,7 @@ namespace Cartography.Testing
 			var model = new SampleModel { StringProperty = "Test" };
 			new PrimitiveOrStringPropertyMappingPolicy()
 				.RuleFor(request)
-				.Map(new MappingContext(), model)
+				.Map(new MappingContext((IMappingProvider)null), model)
 				.ShouldEqual(model.StringProperty);
 		}
 	}

@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{9183AC91-2534-437D-ABA4-9D25A93ACE1E}</ProjectGuid>
+    <ProjectGuid>{37022FE8-70E0-4230-AE70-EC3C4C43AECC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Cartography.Testing</RootNamespace>
-    <AssemblyName>Cartography.Testing</AssemblyName>
+    <RootNamespace>FubuMVC.Cartography</RootNamespace>
+    <AssemblyName>FubuMVC.Cartography</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,17 +34,8 @@
     <Reference Include="FubuCore">
       <HintPath>..\..\lib\Fubu\FubuCore.dll</HintPath>
     </Reference>
-    <Reference Include="nunit.framework">
-      <HintPath>..\..\lib\NUnit\nunit.framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Rhino.Mocks">
-      <HintPath>..\..\lib\RhinoMocks\Rhino.Mocks.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap">
-      <HintPath>..\..\lib\StructureMap\StructureMap.dll</HintPath>
-    </Reference>
-    <Reference Include="StructureMap.AutoMocking">
-      <HintPath>..\..\lib\StructureMap\StructureMap.AutoMocking.dll</HintPath>
+    <Reference Include="FubuMVC.Core">
+      <HintPath>..\..\lib\Fubu\FubuMVC.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -55,18 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BootstrappingTester.cs" />
-    <Compile Include="CollectionMappingTester.cs" />
-    <Compile Include="EndToEndMappingTester.cs" />
-    <Compile Include="InteractionContext.cs" />
-    <Compile Include="MappingPolicySourceTester.cs" />
-    <Compile Include="ObjectResolutionAndEnrichmentTester.cs" />
-    <Compile Include="PrimitiveOrStringPropertyMappingPolicyTester.cs" />
+    <Compile Include="FubuRegistryExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SampleModel.cs" />
-    <Compile Include="SimpleMappingTest.cs" />
-    <Compile Include="SpecificationExtensions.cs" />
-    <Compile Include="StructureMapExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cartography\Cartography.csproj">

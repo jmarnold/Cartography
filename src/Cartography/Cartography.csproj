@@ -34,9 +34,6 @@
     <Reference Include="FubuCore">
       <HintPath>..\..\lib\Fubu\FubuCore.dll</HintPath>
     </Reference>
-    <Reference Include="StructureMap">
-      <HintPath>..\..\lib\StructureMap\StructureMap.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,6 +46,7 @@
     <Compile Include="Dsl\ListModifierExpression.cs" />
     <Compile Include="IMappingProvider.cs" />
     <Compile Include="IMappingQuery.cs" />
+    <Compile Include="MappingConfigurationModel.cs" />
     <Compile Include="MappingProvider.cs" />
     <Compile Include="MappingQuery.cs" />
     <Compile Include="MappingRegistry.cs" />
@@ -74,7 +72,6 @@
     <Compile Include="Runtime\LambdaObjectResolver.cs" />
     <Compile Include="Runtime\MappingContext.cs" />
     <Compile Include="Runtime\PropertyMappingRequest.cs" />
-    <Compile Include="StructureMapExtensions.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

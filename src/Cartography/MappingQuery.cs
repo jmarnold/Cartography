@@ -12,8 +12,8 @@ namespace Cartography
 		private readonly IEnumerable<IObjectResolver> _resolvers;
 		private readonly IEnumerable<IObjectEnricher> _enrichers;
 
-		public MappingQuery(IEnumerable<IMappingPolicy> policies, IEnumerable<IObjectResolver> resolvers, 
-			IEnumerable<IObjectEnricher> enrichers)
+		public MappingQuery(IEnumerable<IMappingPolicy> policies, IEnumerable<IObjectResolver> resolvers,
+		                    IEnumerable<IObjectEnricher> enrichers)
 		{
 			_policies = policies;
 			_enrichers = enrichers;
@@ -28,8 +28,8 @@ namespace Cartography
 		public MappingResult MapFor(MappingRequest request)
 		{
 			var rules = _policies
-							.Where(p => p.Matches(request))
-							.SelectMany(p => p.RulesFor(request));
+				.Where(p => p.Matches(request))
+				.SelectMany(p => p.RulesFor(request));
 
 			return new MappingResult(request.SourceType, request.DestinationType, rules, _resolvers, _enrichers);
 		}

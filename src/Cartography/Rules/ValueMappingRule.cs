@@ -21,10 +21,10 @@ namespace Cartography.Rules
 			return _map(value);
 		}
 
-        public override string ToString()
-        {
-            return "Value Mapping: {0}.{1} to {2}.{3}".ToFormat(Request.OwnerType.Name, Request.Source.Name,
-                Request.Destination.OwnerType.Name, Request.Destination.Name);
-        }
+		public override string ToString()
+		{
+			return "Value Mapping: {0}.{1} to {2}.{3}".ToFormat(Request.OwnerType.Name, Request.Source.Name,
+			                                                    Request.Destination.OwnerType.Name, Request.Destination.Name);
+		}
 	}
 }
